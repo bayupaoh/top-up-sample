@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import UIKitUtils
+import Utils
 
 public class TopUpTextField: UIView {
     public var isLeadingIconHidden: Bool = true {
@@ -14,13 +14,13 @@ public class TopUpTextField: UIView {
             leadingIconContainerView.isHidden = isLeadingIconHidden
         }
     }
-
+    
     public var isSecondaryTrailingIconHidden: Bool = true {
         didSet {
             trailingIcon2ContainerView.isHidden = isSecondaryTrailingIconHidden
         }
     }
-
+    
     public var isTrailingIconHidden: Bool = true {
         didSet {
             trailingIconContainerView.isHidden = isTrailingIconHidden
@@ -32,13 +32,13 @@ public class TopUpTextField: UIView {
             leadingIconImageView.image = leadingIcon
         }
     }
-
+    
     public var secondaryTrailingIcon: UIImage? {
         didSet {
             trailingIcon2ImageView.image = secondaryTrailingIcon
         }
     }
-
+    
     public var trailingIcon: UIImage? {
         didSet {
             trailingIconImageView.image = trailingIcon
@@ -51,17 +51,23 @@ public class TopUpTextField: UIView {
         }
     }
     
+    public var titleText: String = "" {
+        didSet {
+            titleLabel.text = titleText
+        }
+    }
+    
     public var keyboardType: UIKeyboardType = .default {
         didSet {
             textField.keyboardType = keyboardType
         }
     }
-
+    
     var onTextFieldChanged: ((String?) -> Void)?
     var onLeadingIconDidPressed: (() -> Void)?
     var onSecondaryTrailingIconDidPressed: (() -> Void)?
     var onTrailingIconDidPressed: (() -> Void)?
-
+    
     private lazy var containerStackView: UIStackView = {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -78,7 +84,7 @@ public class TopUpTextField: UIView {
         view.isUserInteractionEnabled = true
         return view
     }()
-
+    
     private lazy var leadingIconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -86,7 +92,7 @@ public class TopUpTextField: UIView {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-
+    
     private lazy var containerTextFieldStackView: UIStackView = {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -96,7 +102,7 @@ public class TopUpTextField: UIView {
         view.spacing = CGFloat.spaceXs()
         return view
     }()
-
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -105,7 +111,7 @@ public class TopUpTextField: UIView {
         label.numberOfLines = 1
         return label
     }()
-
+    
     private lazy var captionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -114,7 +120,7 @@ public class TopUpTextField: UIView {
         label.numberOfLines = 1
         return label
     }()
-
+    
     private lazy var errorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -124,7 +130,7 @@ public class TopUpTextField: UIView {
         label.isHidden = true
         return label
     }()
-
+    
     private lazy var textFieldStackView: UIStackView = {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -134,14 +140,14 @@ public class TopUpTextField: UIView {
         view.spacing = CGFloat.spaceSm()
         return view
     }()
-
+    
     private lazy var textFieldView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor.bgWhite()
         return view
     }()
-
+    
     private lazy var trailingIcon2ContainerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -149,7 +155,7 @@ public class TopUpTextField: UIView {
         view.isHidden = true
         return view
     }()
-
+    
     
     private lazy var textFieldDividerView: TopUpDSDivider = {
         let view = TopUpDSDivider()
@@ -157,7 +163,7 @@ public class TopUpTextField: UIView {
         view.type = .module
         return view
     }()
-
+    
     private lazy var textField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -174,14 +180,14 @@ public class TopUpTextField: UIView {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-
+    
     private lazy var trailingIconContainerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isUserInteractionEnabled = true
         return view
     }()
-
+    
     private lazy var trailingIcon2ImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -189,26 +195,29 @@ public class TopUpTextField: UIView {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
         setupAppearances()
         setupConstraints()
     }
-
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
     public func showCaptionText(_ text: String) {
         errorLabel.isHidden = true
         captionLabel.isHidden = false
         captionLabel.text = text
     }
-
+    
     public func showErrorText(_ text: String) {
         errorLabel.isHidden = false
         captionLabel.isHidden = true
         errorLabel.text = text
     }
-
+    
     private func setupAppearances() {
         leadingIconContainerView.isHidden = isLeadingIconHidden
         trailingIcon2ContainerView.isHidden = isSecondaryTrailingIconHidden
@@ -221,7 +230,7 @@ public class TopUpTextField: UIView {
         errorLabel.isHidden = true
         captionLabel.isHidden = true
     }
-
+    
     private func setupConstraints() {
         addSubview(containerStackView)
         containerStackView
@@ -246,13 +255,17 @@ public class TopUpTextField: UIView {
         containerTextFieldStackView.addArrangedSubview(errorLabel)
         textFieldStackView.addArrangedSubview(textFieldView)
         textFieldView.addSubview(textField)
-        trailingIconImageView
-            .anchorAll(
-                top: textFieldView.topAnchor,
-                bottom: textFieldView.bottomAnchor,
-                leading: textFieldView.leadingAnchor,
-                trailing: textFieldView.trailingAnchor
+        textField
+            .anchorTopBottom(
+                toTop: textFieldView.topAnchor,
+                toBottom: textFieldView.bottomAnchor
             )
+            .anchorLeadingTrailing(
+                toLeading: textFieldView.leadingAnchor,
+                toTrailing: textFieldView.trailingAnchor,
+                constant: .init(.space0(), .spaceLg())
+            )
+            .anchorHeightSize(constant: .space2Xl(), type: .constant)
         textFieldView.addSubview(textFieldDividerView)
         textFieldDividerView
             .anchorLeadingTrailing(
@@ -260,6 +273,7 @@ public class TopUpTextField: UIView {
                 toTrailing: textFieldView.trailingAnchor
             )
             .anchorBottom(to: textFieldView.bottomAnchor)
+            .anchorHeightSize(constant: 1.0, type: .constant)
         textFieldView.addSubview(trailingIconContainerView)
         trailingIconContainerView
             .anchorTopBottom(
@@ -267,7 +281,10 @@ public class TopUpTextField: UIView {
                 toBottom: textFieldView.bottomAnchor,
                 constant: .init(.space0(), .space0())
             )
-            .anchorTrailing(to: textFieldView.trailingAnchor, constant: .space0())
+            .anchorTrailing(
+                to: textFieldView.trailingAnchor
+            )
+            .anchorWidthSize(constant: .spaceLg(), type: .constant)
         trailingIconContainerView.addSubview(trailingIconImageView)
         trailingIconImageView
             .anchorAll(
@@ -279,11 +296,12 @@ public class TopUpTextField: UIView {
         textFieldStackView.addArrangedSubview(trailingIcon2ContainerView)
         trailingIcon2ContainerView.addSubview(trailingIcon2ImageView)
         trailingIcon2ImageView
-            .anchorAll(
-                top: trailingIcon2ContainerView.topAnchor,
-                bottom: trailingIcon2ContainerView.bottomAnchor,
-                leading: trailingIcon2ContainerView.leadingAnchor,
-                trailing: trailingIcon2ContainerView.trailingAnchor
+            .anchorLeadingTrailing(
+                toLeading: trailingIcon2ContainerView.leadingAnchor,
+                toTrailing: trailingIcon2ContainerView.trailingAnchor,
+                constant: .init(.space0(), .space0())
             )
+            .anchorWidthSize(constant: .spaceXl(), type: .constant)
+            .anchorCenterYToSuperview()
     }
 }

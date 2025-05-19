@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		DE8D9B7F2DD86B9E00489DCD /* TopUpDS in Frameworks */ = {isa = PBXBuildFile; productRef = DE8D9B7E2DD86B9E00489DCD /* TopUpDS */; };
+		DE8D9B9E2DD89C6E00489DCD /* PulsaAndData in Frameworks */ = {isa = PBXBuildFile; productRef = DE8D9B9D2DD89C6E00489DCD /* PulsaAndData */; };
+		DE8D9BA52DD9D15300489DCD /* DepedencyContainer in Frameworks */ = {isa = PBXBuildFile; productRef = DE8D9BA42DD9D15300489DCD /* DepedencyContainer */; };
+		DE8D9BA92DD9D2F100489DCD /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = DE8D9BA82DD9D2F100489DCD /* Utils */; };
+		DEDE5AB52DDAD097000642B6 /* Payment in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE5AB42DDAD097000642B6 /* Payment */; };
+		DEDE5AB72DDAD097000642B6 /* PaymentCore in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE5AB62DDAD097000642B6 /* PaymentCore */; };
+		DEDE5AB92DDAD097000642B6 /* PaymentCoreLive in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE5AB82DDAD097000642B6 /* PaymentCoreLive */; };
+		DEDE5ABB2DDAD097000642B6 /* PulsaAndDataCore in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE5ABA2DDAD097000642B6 /* PulsaAndDataCore */; };
+		DEDE5ABD2DDAD097000642B6 /* PulsaAndDataCoreLive in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE5ABC2DDAD097000642B6 /* PulsaAndDataCoreLive */; };
+		DEDE5ABF2DDAD097000642B6 /* Voucher in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE5ABE2DDAD097000642B6 /* Voucher */; };
+		DEDE5AC12DDAD097000642B6 /* VoucherCore in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE5AC02DDAD097000642B6 /* VoucherCore */; };
+		DEDE5AC32DDAD097000642B6 /* VoucherCoreLive in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE5AC22DDAD097000642B6 /* VoucherCoreLive */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +81,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEDE5AC12DDAD097000642B6 /* VoucherCore in Frameworks */,
 				DE8D9B7F2DD86B9E00489DCD /* TopUpDS in Frameworks */,
+				DE8D9BA92DD9D2F100489DCD /* Utils in Frameworks */,
+				DEDE5ABD2DDAD097000642B6 /* PulsaAndDataCoreLive in Frameworks */,
+				DEDE5ABF2DDAD097000642B6 /* Voucher in Frameworks */,
+				DE8D9BA52DD9D15300489DCD /* DepedencyContainer in Frameworks */,
+				DEDE5ABB2DDAD097000642B6 /* PulsaAndDataCore in Frameworks */,
+				DEDE5AB92DDAD097000642B6 /* PaymentCoreLive in Frameworks */,
+				DEDE5AC32DDAD097000642B6 /* VoucherCoreLive in Frameworks */,
+				DEDE5AB52DDAD097000642B6 /* Payment in Frameworks */,
+				DEDE5AB72DDAD097000642B6 /* PaymentCore in Frameworks */,
+				DE8D9B9E2DD89C6E00489DCD /* PulsaAndData in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +163,17 @@
 			name = "TopUp-Sample";
 			packageProductDependencies = (
 				DE8D9B7E2DD86B9E00489DCD /* TopUpDS */,
+				DE8D9B9D2DD89C6E00489DCD /* PulsaAndData */,
+				DE8D9BA42DD9D15300489DCD /* DepedencyContainer */,
+				DE8D9BA82DD9D2F100489DCD /* Utils */,
+				DEDE5AB42DDAD097000642B6 /* Payment */,
+				DEDE5AB62DDAD097000642B6 /* PaymentCore */,
+				DEDE5AB82DDAD097000642B6 /* PaymentCoreLive */,
+				DEDE5ABA2DDAD097000642B6 /* PulsaAndDataCore */,
+				DEDE5ABC2DDAD097000642B6 /* PulsaAndDataCoreLive */,
+				DEDE5ABE2DDAD097000642B6 /* Voucher */,
+				DEDE5AC02DDAD097000642B6 /* VoucherCore */,
+				DEDE5AC22DDAD097000642B6 /* VoucherCoreLive */,
 			);
 			productName = "TopUp-Sample";
 			productReference = DE8D854E2DD731F700489DCD /* TopUp-Sample.app */;
@@ -590,6 +623,50 @@
 		DE8D9B7E2DD86B9E00489DCD /* TopUpDS */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TopUpDS;
+		};
+		DE8D9B9D2DD89C6E00489DCD /* PulsaAndData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PulsaAndData;
+		};
+		DE8D9BA42DD9D15300489DCD /* DepedencyContainer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DepedencyContainer;
+		};
+		DE8D9BA82DD9D2F100489DCD /* Utils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Utils;
+		};
+		DEDE5AB42DDAD097000642B6 /* Payment */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Payment;
+		};
+		DEDE5AB62DDAD097000642B6 /* PaymentCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PaymentCore;
+		};
+		DEDE5AB82DDAD097000642B6 /* PaymentCoreLive */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PaymentCoreLive;
+		};
+		DEDE5ABA2DDAD097000642B6 /* PulsaAndDataCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PulsaAndDataCore;
+		};
+		DEDE5ABC2DDAD097000642B6 /* PulsaAndDataCoreLive */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PulsaAndDataCoreLive;
+		};
+		DEDE5ABE2DDAD097000642B6 /* Voucher */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Voucher;
+		};
+		DEDE5AC02DDAD097000642B6 /* VoucherCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VoucherCore;
+		};
+		DEDE5AC22DDAD097000642B6 /* VoucherCoreLive */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VoucherCoreLive;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

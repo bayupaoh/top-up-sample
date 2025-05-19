@@ -46,5 +46,6 @@ public extension UIColor {
     class func iconWhite() -> UIColor { return UIColor(hexString: "#ffffff") }
 
     class func borderDefault() -> UIColor { return UIColor(hexString: "#2d2d2d") }
+    class func borderSubtle() -> UIColor { return UIColor(hexString: "#a1a1a1") }
     class func borderTabSelected() -> UIColor { return UIColor(hexString: "#eb915c") }
 }

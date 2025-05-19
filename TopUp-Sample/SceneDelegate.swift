@@ -7,17 +7,19 @@
 
 import UIKit
 import TopUpDS
+import DepedencyContainer
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var dependencyContainer: AppDependencyContainerType = AppDependencyContainer()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         // Create a new window property
         self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         self.window?.windowScene = windowScene
-        let viewController = SampleViewController()
+        let viewController = dependencyContainer.pulsaAndData.makeHomePageViewController()
         let navigationController = CustomNavigationViewController(rootViewController: viewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

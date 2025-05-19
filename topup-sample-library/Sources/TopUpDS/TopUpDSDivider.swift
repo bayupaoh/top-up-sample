@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import UIKitUtils
+import Utils
 
 public enum TopUpDSDividerType: String {
 
@@ -32,7 +32,7 @@ public class TopUpDSDivider: UIView {
         }
     }
 
-    public var dashColor: UIColor = .borderDefault() {
+    public var dashColor: UIColor = .borderSubtle() {
         didSet {
             setupDivider()
         }
@@ -69,7 +69,8 @@ public class TopUpDSDivider: UIView {
     }
 
     private func configure() {
-        backgroundColor = .borderDefault()
+        translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = .borderSubtle()
         layer.cornerRadius = 0
     }
 
@@ -86,31 +87,15 @@ public class TopUpDSDivider: UIView {
     }
 
     private func setupModuleDivider() {
-        constraints.forEach { constraint in
-            if constraint.firstAttribute == .height {
-                constraint.constant = heightModuleDivider
-            }
-        }
         self.anchorHeightSize(constant: heightModuleDivider, type: .constant)
     }
 
     private func setupSectionDivider() {
-        constraints.forEach { constraint in
-            if constraint.firstAttribute == .height {
-                constraint.constant = heightSectionDivider
-            }
-        }
         anchorHeightSize(constant: heightSectionDivider, type: .constant)
     }
 
     private func setupDashDivider() {
-        backgroundColor = .clear
-        constraints.forEach { constraint in
-            if constraint.firstAttribute == .height {
-                constraint.constant = heightDashDivider
-            }
-        }
-        anchorHeightSize(constant: heightDashDivider, type: .constant)
+        self.anchorHeightSize(constant: heightDashDivider, type: .constant)
     }
 }
 

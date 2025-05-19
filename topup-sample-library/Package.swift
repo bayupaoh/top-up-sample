@@ -3,11 +3,12 @@
 
 import PackageDescription
 
-let uiKitUtils = "UIKitUtils"
+let utils = "Utils"
 let topUpDS = "TopUpDS"
 let pulsaAndData = "PulsaAndData"
+let payment = "Payment"
 let voucher = "Voucher"
-let depedencyInjectionModule = "DepedencyInjectionModule"
+let depedencyConatiner = "DepedencyContainer"
 
 private extension String {
     
@@ -33,8 +34,7 @@ private extension String {
 }
 
 private extension Target.Dependency {
-// Add Depedency Here
-//    static let skeletonView = Self.product(name: "SkeletonView", package: "SkeletonView")
+    static let kingFisher = Self.product(name: "Kingfisher", package: "Kingfisher")
 }
 
 
@@ -42,43 +42,92 @@ let package = Package(
     name: "topup-sample-library",
     platforms: [.iOS(.v15)],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        uiKitUtils.library,
+        utils.library,
         topUpDS.library,
-//        voucher.core.library,
-//        voucher.coreLive.library,
-//        voucher.library,
-//        pulsaAndData.core.library,
-//        pulsaAndData.coreLive.library,
+        voucher.core.library,
+        voucher.coreLive.library,
+        voucher.library,
+        payment.core.library,
+        payment.coreLive.library,
+        payment.library,
+        pulsaAndData.core.library,
+        pulsaAndData.coreLive.library,
         pulsaAndData.library,
-        depedencyInjectionModule.library
+        depedencyConatiner.library
     ],
     dependencies: [
-        // Define depedencies here
+        .package(url: "https://github.com/onevcat/Kingfisher.git", exact: "8.0.0"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: depedencyInjectionModule,
+            name: depedencyConatiner,
             dependencies: []
         ),
         .target(
-            name: uiKitUtils,
-            dependencies: []
+            name: utils,
+            dependencies: [
+                .kingFisher
+            ]
         ),
         .target(
             name: topUpDS,
             dependencies: [
-                uiKitUtils.dependency
+                utils.dependency
             ]
+        ),
+        .target(
+            name: pulsaAndData.core,
+            dependencies: []
+        ),
+        .target(
+            name: pulsaAndData.coreLive,
+            dependencies: []
         ),
         .target(
             name: pulsaAndData,
             dependencies: [
-                uiKitUtils.dependency,
+                utils.dependency,
                 topUpDS.dependency,
+            ],
+            resources: [
+                .process("Assets/")
             ]
         ),
+        .target(
+            name: voucher.core,
+            dependencies: []
+        ),
+        .target(
+            name: voucher.coreLive,
+            dependencies: []
+        ),
+        .target(
+            name: voucher,
+            dependencies: [
+                utils.dependency,
+                topUpDS.dependency,
+            ],
+            resources: [
+                .process("Assets/")
+            ]
+        ),
+        .target(
+            name: payment.core,
+            dependencies: []
+        ),
+        .target(
+            name: payment.coreLive,
+            dependencies: []
+        ),
+        .target(
+            name: payment,
+            dependencies: [
+                utils.dependency,
+                topUpDS.dependency,
+            ],
+            resources: [
+                .process("Assets/")
+            ]
+        )
     ]
 )

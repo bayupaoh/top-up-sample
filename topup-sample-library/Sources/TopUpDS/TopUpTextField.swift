@@ -45,6 +45,12 @@ public class TopUpTextField: UIView {
         }
     }
     
+    public var leadingURLImage: String = "" {
+        didSet {
+            leadingIconImageView.setImage(url: leadingURLImage)
+        }
+    }
+    
     public var placeholder: String = "" {
         didSet {
             textField.placeholder = placeholder

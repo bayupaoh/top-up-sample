@@ -12,7 +12,7 @@ open class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
 
     private lazy var leftBarButtonItem: UIBarButtonItem = {
         let leftBarButtonImage: UIImage? = UIImage(named: isShowBackButtonAsClose ? "chevron.left" : "xmark")?.withRenderingMode(.alwaysTemplate)
-        leftBarButtonImage?.withTintColor(.iconWhite())
+        leftBarButtonImage?.withTintColor(.iconInverse())
         let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(
             image: leftBarButtonImage,
             style: .plain,
@@ -88,14 +88,14 @@ extension UINavigationController {
             guard let self else { return }
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = .bgBrandBold()
+            appearance.backgroundColor = .bgBrandBoldDefault()
             appearance.shadowImage = UIImage()
             appearance.shadowColor = nil
             isNavigationBarHidden = false
-            navigationBar.tintColor = .textWhite()
+            navigationBar.tintColor = .textInverse()
             let titleAttributes = [
                 NSAttributedString.Key.font: UIFont.bodyMdReguler(),
-                NSAttributedString.Key.foregroundColor: UIColor.textWhite()
+                NSAttributedString.Key.foregroundColor: UIColor.textInverse()
             ]
             appearance.titleTextAttributes = titleAttributes
             appearance.largeTitleTextAttributes = titleAttributes

@@ -7,18 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE8D9B7F2DD86B9E00489DCD /* TopUpDS in Frameworks */ = {isa = PBXBuildFile; productRef = DE8D9B7E2DD86B9E00489DCD /* TopUpDS */; };
-		DE8D9B9E2DD89C6E00489DCD /* PulsaAndData in Frameworks */ = {isa = PBXBuildFile; productRef = DE8D9B9D2DD89C6E00489DCD /* PulsaAndData */; };
-		DE8D9BA52DD9D15300489DCD /* DepedencyContainer in Frameworks */ = {isa = PBXBuildFile; productRef = DE8D9BA42DD9D15300489DCD /* DepedencyContainer */; };
-		DE8D9BA92DD9D2F100489DCD /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = DE8D9BA82DD9D2F100489DCD /* Utils */; };
-		DEDE5AB52DDAD097000642B6 /* Payment in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE5AB42DDAD097000642B6 /* Payment */; };
-		DEDE5AB72DDAD097000642B6 /* PaymentCore in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE5AB62DDAD097000642B6 /* PaymentCore */; };
-		DEDE5AB92DDAD097000642B6 /* PaymentCoreLive in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE5AB82DDAD097000642B6 /* PaymentCoreLive */; };
-		DEDE5ABB2DDAD097000642B6 /* PulsaAndDataCore in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE5ABA2DDAD097000642B6 /* PulsaAndDataCore */; };
-		DEDE5ABD2DDAD097000642B6 /* PulsaAndDataCoreLive in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE5ABC2DDAD097000642B6 /* PulsaAndDataCoreLive */; };
-		DEDE5ABF2DDAD097000642B6 /* Voucher in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE5ABE2DDAD097000642B6 /* Voucher */; };
-		DEDE5AC12DDAD097000642B6 /* VoucherCore in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE5AC02DDAD097000642B6 /* VoucherCore */; };
-		DEDE5AC32DDAD097000642B6 /* VoucherCoreLive in Frameworks */ = {isa = PBXBuildFile; productRef = DEDE5AC22DDAD097000642B6 /* VoucherCoreLive */; };
+		DE1001F22DDC62B500BC4385 /* AppCoordinatorModule in Frameworks */ = {isa = PBXBuildFile; productRef = DE1001F12DDC62B500BC4385 /* AppCoordinatorModule */; };
+		DE1001F42DDC62B500BC4385 /* AppInterfaces in Frameworks */ = {isa = PBXBuildFile; productRef = DE1001F32DDC62B500BC4385 /* AppInterfaces */; };
+		DE1001F62DDC62B500BC4385 /* AppScreenModule in Frameworks */ = {isa = PBXBuildFile; productRef = DE1001F52DDC62B500BC4385 /* AppScreenModule */; };
+		DE1001F82DDC62B500BC4385 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = DE1001F72DDC62B500BC4385 /* Core */; };
+		DE1001FA2DDC62B500BC4385 /* Payment in Frameworks */ = {isa = PBXBuildFile; productRef = DE1001F92DDC62B500BC4385 /* Payment */; };
+		DE1001FC2DDC62B500BC4385 /* PaymentCore in Frameworks */ = {isa = PBXBuildFile; productRef = DE1001FB2DDC62B500BC4385 /* PaymentCore */; };
+		DE1001FE2DDC62B500BC4385 /* PaymentCoreLive in Frameworks */ = {isa = PBXBuildFile; productRef = DE1001FD2DDC62B500BC4385 /* PaymentCoreLive */; };
+		DE1002002DDC62B500BC4385 /* PulsaAndData in Frameworks */ = {isa = PBXBuildFile; productRef = DE1001FF2DDC62B500BC4385 /* PulsaAndData */; };
+		DE1002022DDC62B500BC4385 /* PulsaAndDataCore in Frameworks */ = {isa = PBXBuildFile; productRef = DE1002012DDC62B500BC4385 /* PulsaAndDataCore */; };
+		DE1002042DDC62B500BC4385 /* PulsaAndDataCoreLive in Frameworks */ = {isa = PBXBuildFile; productRef = DE1002032DDC62B500BC4385 /* PulsaAndDataCoreLive */; };
+		DE1002062DDC62B500BC4385 /* TopUpDS in Frameworks */ = {isa = PBXBuildFile; productRef = DE1002052DDC62B500BC4385 /* TopUpDS */; };
+		DE1002082DDC62B500BC4385 /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = DE1002072DDC62B500BC4385 /* Utils */; };
+		DE10020A2DDC62B500BC4385 /* Voucher in Frameworks */ = {isa = PBXBuildFile; productRef = DE1002092DDC62B500BC4385 /* Voucher */; };
+		DE10020C2DDC62B500BC4385 /* VoucherCore in Frameworks */ = {isa = PBXBuildFile; productRef = DE10020B2DDC62B500BC4385 /* VoucherCore */; };
+		DE10020E2DDC62B500BC4385 /* VoucherCoreLive in Frameworks */ = {isa = PBXBuildFile; productRef = DE10020D2DDC62B500BC4385 /* VoucherCoreLive */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,18 +84,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDE5AC12DDAD097000642B6 /* VoucherCore in Frameworks */,
-				DE8D9B7F2DD86B9E00489DCD /* TopUpDS in Frameworks */,
-				DE8D9BA92DD9D2F100489DCD /* Utils in Frameworks */,
-				DEDE5ABD2DDAD097000642B6 /* PulsaAndDataCoreLive in Frameworks */,
-				DEDE5ABF2DDAD097000642B6 /* Voucher in Frameworks */,
-				DE8D9BA52DD9D15300489DCD /* DepedencyContainer in Frameworks */,
-				DEDE5ABB2DDAD097000642B6 /* PulsaAndDataCore in Frameworks */,
-				DEDE5AB92DDAD097000642B6 /* PaymentCoreLive in Frameworks */,
-				DEDE5AC32DDAD097000642B6 /* VoucherCoreLive in Frameworks */,
-				DEDE5AB52DDAD097000642B6 /* Payment in Frameworks */,
-				DEDE5AB72DDAD097000642B6 /* PaymentCore in Frameworks */,
-				DE8D9B9E2DD89C6E00489DCD /* PulsaAndData in Frameworks */,
+				DE1002022DDC62B500BC4385 /* PulsaAndDataCore in Frameworks */,
+				DE1001F42DDC62B500BC4385 /* AppInterfaces in Frameworks */,
+				DE10020A2DDC62B500BC4385 /* Voucher in Frameworks */,
+				DE1001F82DDC62B500BC4385 /* Core in Frameworks */,
+				DE1001F22DDC62B500BC4385 /* AppCoordinatorModule in Frameworks */,
+				DE1001FE2DDC62B500BC4385 /* PaymentCoreLive in Frameworks */,
+				DE1002062DDC62B500BC4385 /* TopUpDS in Frameworks */,
+				DE1002082DDC62B500BC4385 /* Utils in Frameworks */,
+				DE10020E2DDC62B500BC4385 /* VoucherCoreLive in Frameworks */,
+				DE1001FA2DDC62B500BC4385 /* Payment in Frameworks */,
+				DE1001FC2DDC62B500BC4385 /* PaymentCore in Frameworks */,
+				DE1002002DDC62B500BC4385 /* PulsaAndData in Frameworks */,
+				DE1001F62DDC62B500BC4385 /* AppScreenModule in Frameworks */,
+				DE10020C2DDC62B500BC4385 /* VoucherCore in Frameworks */,
+				DE1002042DDC62B500BC4385 /* PulsaAndDataCoreLive in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,18 +168,21 @@
 			);
 			name = "TopUp-Sample";
 			packageProductDependencies = (
-				DE8D9B7E2DD86B9E00489DCD /* TopUpDS */,
-				DE8D9B9D2DD89C6E00489DCD /* PulsaAndData */,
-				DE8D9BA42DD9D15300489DCD /* DepedencyContainer */,
-				DE8D9BA82DD9D2F100489DCD /* Utils */,
-				DEDE5AB42DDAD097000642B6 /* Payment */,
-				DEDE5AB62DDAD097000642B6 /* PaymentCore */,
-				DEDE5AB82DDAD097000642B6 /* PaymentCoreLive */,
-				DEDE5ABA2DDAD097000642B6 /* PulsaAndDataCore */,
-				DEDE5ABC2DDAD097000642B6 /* PulsaAndDataCoreLive */,
-				DEDE5ABE2DDAD097000642B6 /* Voucher */,
-				DEDE5AC02DDAD097000642B6 /* VoucherCore */,
-				DEDE5AC22DDAD097000642B6 /* VoucherCoreLive */,
+				DE1001F12DDC62B500BC4385 /* AppCoordinatorModule */,
+				DE1001F32DDC62B500BC4385 /* AppInterfaces */,
+				DE1001F52DDC62B500BC4385 /* AppScreenModule */,
+				DE1001F72DDC62B500BC4385 /* Core */,
+				DE1001F92DDC62B500BC4385 /* Payment */,
+				DE1001FB2DDC62B500BC4385 /* PaymentCore */,
+				DE1001FD2DDC62B500BC4385 /* PaymentCoreLive */,
+				DE1001FF2DDC62B500BC4385 /* PulsaAndData */,
+				DE1002012DDC62B500BC4385 /* PulsaAndDataCore */,
+				DE1002032DDC62B500BC4385 /* PulsaAndDataCoreLive */,
+				DE1002052DDC62B500BC4385 /* TopUpDS */,
+				DE1002072DDC62B500BC4385 /* Utils */,
+				DE1002092DDC62B500BC4385 /* Voucher */,
+				DE10020B2DDC62B500BC4385 /* VoucherCore */,
+				DE10020D2DDC62B500BC4385 /* VoucherCoreLive */,
 			);
 			productName = "TopUp-Sample";
 			productReference = DE8D854E2DD731F700489DCD /* TopUp-Sample.app */;
@@ -620,51 +629,63 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DE8D9B7E2DD86B9E00489DCD /* TopUpDS */ = {
+		DE1001F12DDC62B500BC4385 /* AppCoordinatorModule */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = TopUpDS;
+			productName = AppCoordinatorModule;
 		};
-		DE8D9B9D2DD89C6E00489DCD /* PulsaAndData */ = {
+		DE1001F32DDC62B500BC4385 /* AppInterfaces */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = PulsaAndData;
+			productName = AppInterfaces;
 		};
-		DE8D9BA42DD9D15300489DCD /* DepedencyContainer */ = {
+		DE1001F52DDC62B500BC4385 /* AppScreenModule */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = DepedencyContainer;
+			productName = AppScreenModule;
 		};
-		DE8D9BA82DD9D2F100489DCD /* Utils */ = {
+		DE1001F72DDC62B500BC4385 /* Core */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Utils;
+			productName = Core;
 		};
-		DEDE5AB42DDAD097000642B6 /* Payment */ = {
+		DE1001F92DDC62B500BC4385 /* Payment */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Payment;
 		};
-		DEDE5AB62DDAD097000642B6 /* PaymentCore */ = {
+		DE1001FB2DDC62B500BC4385 /* PaymentCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PaymentCore;
 		};
-		DEDE5AB82DDAD097000642B6 /* PaymentCoreLive */ = {
+		DE1001FD2DDC62B500BC4385 /* PaymentCoreLive */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PaymentCoreLive;
 		};
-		DEDE5ABA2DDAD097000642B6 /* PulsaAndDataCore */ = {
+		DE1001FF2DDC62B500BC4385 /* PulsaAndData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PulsaAndData;
+		};
+		DE1002012DDC62B500BC4385 /* PulsaAndDataCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PulsaAndDataCore;
 		};
-		DEDE5ABC2DDAD097000642B6 /* PulsaAndDataCoreLive */ = {
+		DE1002032DDC62B500BC4385 /* PulsaAndDataCoreLive */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PulsaAndDataCoreLive;
 		};
-		DEDE5ABE2DDAD097000642B6 /* Voucher */ = {
+		DE1002052DDC62B500BC4385 /* TopUpDS */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TopUpDS;
+		};
+		DE1002072DDC62B500BC4385 /* Utils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Utils;
+		};
+		DE1002092DDC62B500BC4385 /* Voucher */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Voucher;
 		};
-		DEDE5AC02DDAD097000642B6 /* VoucherCore */ = {
+		DE10020B2DDC62B500BC4385 /* VoucherCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = VoucherCore;
 		};
-		DEDE5AC22DDAD097000642B6 /* VoucherCoreLive */ = {
+		DE10020D2DDC62B500BC4385 /* VoucherCoreLive */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = VoucherCoreLive;
 		};

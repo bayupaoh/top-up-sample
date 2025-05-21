@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import TopUpDS
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

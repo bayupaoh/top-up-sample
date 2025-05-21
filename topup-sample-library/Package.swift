@@ -8,18 +8,21 @@ let topUpDS = "TopUpDS"
 let pulsaAndData = "PulsaAndData"
 let payment = "Payment"
 let voucher = "Voucher"
-let depedencyConatiner = "DepedencyContainer"
+let core = "Core"
+let appInterfaces = "AppInterfaces"
+let appCoordinator = "AppCoordinatorModule"
+let appModule = "AppScreenModule"
 
 private extension String {
     
     var tests: String {
         "\(self)Tests"
     }
-
+    
     var core: String {
         "\(self)Core"
     }
-
+    
     var coreLive: String {
         "\(self)CoreLive"
     }
@@ -27,7 +30,7 @@ private extension String {
     var library: Product {
         .library(name: self, targets: [self])
     }
-
+    
     var dependency : Target.Dependency {
         .init(stringLiteral: self)
     }
@@ -42,6 +45,9 @@ let package = Package(
     name: "topup-sample-library",
     platforms: [.iOS(.v15)],
     products: [
+        appInterfaces.library,
+        appModule.library,
+        appCoordinator.library,
         utils.library,
         topUpDS.library,
         voucher.core.library,
@@ -53,16 +59,12 @@ let package = Package(
         pulsaAndData.core.library,
         pulsaAndData.coreLive.library,
         pulsaAndData.library,
-        depedencyConatiner.library
+        core.library
     ],
     dependencies: [
         .package(url: "https://github.com/onevcat/Kingfisher.git", exact: "8.0.0"),
     ],
     targets: [
-        .target(
-            name: depedencyConatiner,
-            dependencies: []
-        ),
         .target(
             name: utils,
             dependencies: [
@@ -81,7 +83,9 @@ let package = Package(
         ),
         .target(
             name: pulsaAndData.coreLive,
-            dependencies: []
+            dependencies: [
+                pulsaAndData.core.dependency
+            ]
         ),
         .target(
             name: pulsaAndData,
@@ -99,13 +103,15 @@ let package = Package(
         ),
         .target(
             name: voucher.coreLive,
-            dependencies: []
+            dependencies: [
+                voucher.core.dependency
+            ]
         ),
         .target(
             name: voucher,
             dependencies: [
                 utils.dependency,
-                topUpDS.dependency,
+                topUpDS.dependency
             ],
             resources: [
                 .process("Assets/")
@@ -117,7 +123,9 @@ let package = Package(
         ),
         .target(
             name: payment.coreLive,
-            dependencies: []
+            dependencies: [
+                payment.core.dependency
+            ]
         ),
         .target(
             name: payment,
@@ -127,6 +135,28 @@ let package = Package(
             ],
             resources: [
                 .process("Assets/")
+            ]
+        ),
+        .target(
+            name: core,
+            dependencies: []
+        ),
+        .target(
+            name: appInterfaces,
+            dependencies: []
+        ),
+        .target(
+            name: appModule,
+            dependencies: [
+                appInterfaces.dependency
+            ]
+        ),
+        .target(
+            name: appCoordinator,
+            dependencies: [
+                appInterfaces.dependency,
+                appModule.dependency,
+                pulsaAndData.dependency
             ]
         )
     ]

@@ -6,23 +6,22 @@
 //
 
 import UIKit
-import TopUpDS
-import DepedencyContainer
+import AppCoordinatorModule
+import AppInterfaces
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var dependencyContainer: AppDependencyContainerType = AppDependencyContainer()
+    var coordinator: AppCoordinatorProtocol?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         // Create a new window property
-        self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        self.window?.windowScene = windowScene
-        let viewController = dependencyContainer.pulsaAndData.makeHomePageViewController()
-        let navigationController = CustomNavigationViewController(rootViewController: viewController)
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
+        window = UIWindow(windowScene: windowScene)
+        guard let window else { return }
+        let coordinator = AppCoordinator(window: window)
+        self.coordinator = coordinator
+        coordinator.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

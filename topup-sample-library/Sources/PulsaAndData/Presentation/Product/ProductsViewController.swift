@@ -9,7 +9,7 @@ import UIKit
 import TopUpDS
 import Utils
 
-final class TopUpViewController: BaseViewController {
+final class ProductsViewController: BaseViewController {
     private lazy var topUpTextField: TopUpTextField = {
         let view = TopUpTextField()
         view.translatesAutoresizingMaskIntoConstraints = false

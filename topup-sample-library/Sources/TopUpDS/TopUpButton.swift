@@ -14,44 +14,44 @@ public enum TopUpButtonStyle {
     var backgroundColor: UIColor {
         switch self {
         case .primary:
-            return .bgBrandBold()
+            return .bgBrandBoldDefault()
         case .secondary:
-            return .bgButtton()
+            return .bgBrandSubtleDefault()
         }
     }
 
     var titleColor: UIColor {
-        return .textWhite()
+        return .textInverse()
     }
 
     var pressedTitleColor: UIColor {
-        return .textWhite()
+        return .textInverse()
     }
 
     var pressedBgColor: UIColor {
         switch self {
         case .primary:
-            return .bgBrandBold()
+            return .bgBrandBoldPressed()
         case .secondary:
-            return .bgButtton()
+            return .bgBrandSubtlePressed()
         }
     }
 
     var disabledBgColor: UIColor {
         switch self {
         case .primary:
-            return .bgBrandBold()
+            return .bgBrandBoldDefault()
         case .secondary:
-            return .bgButtton()
+            return .bgBrandSubtleDefault()
         }
     }
 
     var disabledTitleColor: UIColor {
-        return .textWhite()
+        return .textDisabled()
     }
 
     var indicatorColor: UIColor {
-        return .textWhite()
+        return .textBrand()
     }
 }
 
@@ -104,15 +104,15 @@ public enum TopUpButtonSize {
 }
 
 public class TopUpButton : UIButton {
-    var originalButtonText: String?
-    var activityIndicator: UIActivityIndicatorView!
+    public var originalButtonText: String?
+    public var activityIndicator: UIActivityIndicatorView!
 
-    var buttonStyle: TopUpButtonStyle = .primary {
+    public var buttonStyle: TopUpButtonStyle = .primary {
         didSet {
             applyStyle()
         }
     }
-    var buttonSize: TopUpButtonSize = .large {
+    public var buttonSize: TopUpButtonSize = .large {
         didSet {
             applyStyle()
         }
@@ -125,7 +125,7 @@ public class TopUpButton : UIButton {
         }
     }
 
-    init(_ style: TopUpButtonStyle = .primary, _ size: TopUpButtonSize = .large) {
+    public init(_ style: TopUpButtonStyle = .primary, _ size: TopUpButtonSize = .large) {
         super.init(frame: .zero)
         self.buttonSize = size
         self.buttonStyle = style

@@ -44,7 +44,7 @@ public class HomeViewController: BaseViewController {
     
     private lazy var barView: UIView = {
         let view = UIView()
-        view.backgroundColor = .bgBrandBold()
+        view.backgroundColor = .bgBrandBoldDefault()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -54,12 +54,12 @@ public class HomeViewController: BaseViewController {
         title = "home_page_title".localized
         view.backgroundColor = .bgWhite()
         setupConstraint()
-        let childVC = TopUpViewController()
-        addChild(childVC)
-        childVC.view.frame = containerView.bounds
-        childVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        containerView.addSubview(childVC.view)
-        childVC.didMove(toParent: self)
+//        let childVC = TopUpViewController()
+//        addChild(childVC)
+//        childVC.view.frame = containerView.bounds
+//        childVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        containerView.addSubview(childVC.view)
+//        childVC.didMove(toParent: self)
     }
     
     public override func viewWillAppear(_ animated: Bool) {

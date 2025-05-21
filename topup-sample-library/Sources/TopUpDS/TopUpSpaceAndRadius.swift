@@ -7,30 +7,6 @@
 
 import UIKit
 
-public enum SpaceSemantic {
-
-    case space0
-    case spaceXxs
-    case spaceXs
-    case spaceSm
-    case spaceMd
-    case spaceLg
-    case spaceXl
-    case space2Xl
-    case space3Xl
-    case space4Xl
-
-}
-
-public enum RadiusSemantic {
-
-    case radiusSm
-    case radiusMd
-    case radiusLg
-    case radiusFull
-
-}
-
 // MARK: - Space
 public extension CGFloat {
 

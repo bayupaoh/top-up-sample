@@ -11,7 +11,7 @@ public class TopUpTabView: UIView {
     public var isSelected: Bool = true {
         didSet {
             titleLabel.font = isSelected ? .bodySmSemiBold() : .bodySmSemiBold()
-            titleLabel.textColor = isSelected ? .textTabSelected() : .textSubtle()
+            titleLabel.textColor = isSelected ? .textBrand() : .textSubtle()
             activeDividerView.isHidden = !isSelected
             inactiveDividerView.isHidden = isSelected
         }
@@ -35,14 +35,14 @@ public class TopUpTabView: UIView {
     private lazy var activeDividerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .borderTabSelected()
+        view.backgroundColor = .borderDefault()
         return view
     }()
     
     private lazy var inactiveDividerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .borderSubtle()
+        view.backgroundColor = .borderBrand()
         return view
     }()
     

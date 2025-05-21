@@ -32,7 +32,7 @@ public class TopUpDSDivider: UIView {
         }
     }
 
-    public var dashColor: UIColor = .borderSubtle() {
+    public var dashColor: UIColor = .borderDefault() {
         didSet {
             setupDivider()
         }
@@ -70,7 +70,7 @@ public class TopUpDSDivider: UIView {
 
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .borderSubtle()
+        backgroundColor = .borderDefault()
         layer.cornerRadius = 0
     }
 

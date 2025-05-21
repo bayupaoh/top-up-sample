@@ -63,6 +63,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/onevcat/Kingfisher.git", exact: "8.0.0"),
+        .package(url: "https://github.com/krzysztofzablocki/Sourcery.git", exact: "2.2.7")
     ],
     targets: [
         .target(
@@ -157,6 +158,43 @@ let package = Package(
                 appInterfaces.dependency,
                 appModule.dependency,
                 pulsaAndData.dependency
+            ]
+        ),
+        .testTarget(
+            name: payment.coreLive.tests,
+            dependencies: [
+                payment.core.dependency,
+                payment.coreLive.dependency
+            ]
+        ),
+        .testTarget(
+            name: payment.tests,
+            dependencies: [
+                payment.dependency
+            ]
+        ),
+        .testTarget(
+            name: pulsaAndData.coreLive.tests,
+            dependencies: [
+                pulsaAndData.coreLive.dependency
+            ]
+        ),
+        .testTarget(
+            name: pulsaAndData.tests,
+            dependencies: [
+                payment.dependency
+            ]
+        ),
+        .testTarget(
+            name: voucher.coreLive.tests,
+            dependencies: [
+                voucher.coreLive.dependency
+            ]
+        ),
+        .testTarget(
+            name: voucher.tests,
+            dependencies: [
+                voucher.dependency
             ]
         )
     ]
